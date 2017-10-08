@@ -1,19 +1,17 @@
-package keys;
+package Dess;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
 /**
  *
  * @author Hot Cakes
  */
-public class Metodos {
-    ArrayList <String> Code = new ArrayList<>();
-    ArrayList <String> CLeft = new ArrayList<>();
-    ArrayList <String> CRight = new ArrayList<>();
-    ArrayList <String> Keys = new ArrayList<>();
+public class Claves {
+    private final ArrayList <String> CLeft = new ArrayList<>();
+    private final ArrayList <String> CRight = new ArrayList<>();
+    private final ArrayList <String> Code = new ArrayList<>();
     
-    private void obtenerC(){
+    public ArrayList<String> obtenerC(){
         
         Scanner leer = new Scanner(System.in);
         Convertir c = new Convertir();
@@ -63,25 +61,9 @@ public class Metodos {
             clavnewr="";
             CLeft.add(clavl);
             CRight.add(clavr);
+            Code.add(CLeft.get(i)+CRight.get(i));
         }
-    }
-    
-    public void obtenerLlaves(){
-        obtenerC();
-        int[] cP2 = {14,17,11,24,1,5,3,28,15,6,21,10,23,19,12,4,26,8,16,7,27,20,
-            13,2,41,52,31,37,47,55,30,40,51,45,33,48,44,49,39,56,34,53,46,42,50,
-            36,29,32};
-        
-        for (int i = 0; i <= 16; i++) {
-            String clav =(CLeft.get(i)+CRight.get(i));
-            String key="";
-            for (int j = 0; j < 48; j++) {
-                key += clav.charAt(cP2[j]-1);
-                
-            }
-            Keys.add(key);
-            System.out.println("K"+(i)+" "+Keys.get(i));
-        }
+        return Code;
     }
         
 }
