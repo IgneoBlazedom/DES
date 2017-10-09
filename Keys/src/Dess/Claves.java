@@ -16,7 +16,7 @@ public class Claves {
         Scanner leer = new Scanner(System.in);
         Convertir c = new Convertir();
         String str, strc;
-        System.out.println("Ingrese Clave en Hexadecimal");
+        System.out.println("Ingrese Clave en Hexadecimal: ");
         str = leer.next();
         strc = c.convertido(str);
         System.out.println("Tu clave en Binario es: "+strc);    
