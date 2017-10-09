@@ -123,8 +123,7 @@ public class Convertir {
     }
     
     public String pacajas(String str){
-        String conv="";
-                           
+        String conv="";                           
         switch(str){
             case ("0"):
             conv="0000";
@@ -174,6 +173,67 @@ public class Convertir {
             case ("15"):
             conv="1111";
             break;
+        }
+        return conv;
+    }
+    
+    public String Bin2Hex(String str){
+        String conv="";
+        int cont = 0;
+        for (int i = 0; i < 16; i++) {
+            String bin=str.substring(cont,cont+4);            
+            cont=cont+4;
+            switch(bin){
+                case ("0000"):
+                conv+="0";
+                break;
+                case ("0001"):
+                conv+="1";
+                break;
+                case ("0010"):
+                conv+="2";
+                break;
+                case ("0011"):
+                conv+="3";
+                break;
+                case ("0100"):
+                conv+="4";
+                break;
+                case ("0101"):
+                conv+="5";
+                break;
+                case ("0110"):
+                conv+="6";
+                break;
+                case ("0111"):
+                conv+="7";
+                break;
+                case ("1000"):
+                conv+="8";
+                break;
+                case ("1001"):
+                conv+="9";
+                break;
+                case ("1010"):
+                conv+="A";
+                break;
+                case ("1011"):
+                conv+="B";
+                break;
+                case ("1100"):
+                conv+="C";
+                break;
+                case ("1101"):
+                conv+="D";
+                break;
+                case ("1110"):
+                conv+="E";
+                break;
+                case ("1111"):
+                conv+="F";
+                break;            
+            }
+            
         }
         return conv;
     }
